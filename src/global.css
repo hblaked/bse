@@ -1,0 +1,92 @@
+*, ::before, ::after, :root {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  text-decoration: none;
+  list-style: none;
+  
+
+  margin: 0;
+  padding: 0;
+
+  color-scheme: light dark;
+  --forground: #161616;
+  --background: #f4f4f4;
+  --bgaccent: #b4b4b4;
+}
+
+@media (prefers-color-scheme: light) {
+  *, ::before, ::after, :root {
+    --foreground: #161616;
+    --background: #f4f4f4;
+    --bgaccent: #b4b4b4;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  *, ::before, ::after, :root {
+    --foreground: #f4f4f4;
+    --background: #161616;
+    --bgaccent: #404040;
+  }
+}
+
+body {
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.bse-info {
+  display: flex;
+  flex-direction: column;
+  width: 100dvw;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.bse-info svg {
+  fill: var(--foreground)
+}
+
+.bse-info a {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+.copy-url {
+  display: flex;
+  gap: 5px;
+  width: 42rem;
+}
+
+.copy-url input {
+  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--bgaccent);
+  border-radius: 1em;
+  background-color: transparent;
+}
+
+.copy-url input:focus {
+  outline: none;
+}
+
+.copy-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid var(--bgaccent);
+  border-radius: 1em;
+  transition: all 0.25s ease;
+}
+
+.copy-button:hover {
+  background-color: var(--bgaccent);
+}
